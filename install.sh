@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
-# Symlink Files
+# Symlink General Files
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.Brewfile ~/.Brewfile
 
-# Install Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew bundle --global
+# MacOS Specific Tasks
+if  [[ "$OSTYPE" = darwin* ]]; then
+  # Symlink MacOS Files
+  ln -sf ~/dotfiles/.Brewfile ~/.Brewfile
+
+  # Install Homebrew
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew bundle --global
+fi
 
 # Install NVM
 export NVM_DIR="$HOME/dotfiles/.nvm" && (

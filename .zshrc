@@ -23,12 +23,14 @@ antigen bundle yarn
 antigen bundle react-native
 
 # OS
-antigen bundle osx
+if  [[ "$OSTYPE" = darwin* ]]; then
+  antigen bundle osx
+elif [[ "$OSTYPE" = linux* ]]; then
+  antigen bundle ubuntu # If I'm using my dotfiles on a gnux distro, chances are it's ubuntu
+fi
 
 # Misc
 antigen bundle command-not-found
-
-# ZSH Users
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
