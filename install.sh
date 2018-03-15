@@ -11,6 +11,9 @@ if  [[ "$OSTYPE" = darwin* ]]; then
   # Install Homebrew
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew bundle --global
+elif [[ "$OSTYPE" = linux* ]]; then
+  sudo apt-get install -y zsh
+  chsh -s $(which zsh)
 fi
 
 # Install NVM
