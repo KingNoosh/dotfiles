@@ -29,4 +29,4 @@ curl -L git.io/antigen > $HOME/dotfiles/antigen.zsh
 # Install GCP SDK
 curl "https://dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash" | bash -s -- --disable-prompts --install-dir="$HOME/dotfiles/google-cloud-sdk"
 
-exec -l /usr/local/bin/zsh
+exec -l $(which zsh)
