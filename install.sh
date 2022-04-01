@@ -9,7 +9,7 @@ if  [[ "$OSTYPE" = darwin* ]]; then
   ln -sf ~/dotfiles/.Brewfile ~/.Brewfile
 
   # Install Homebrew
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew bundle --global
 elif [[ "$OSTYPE" = linux* ]]; then
   sudo apt-get install -y zsh
@@ -27,6 +27,6 @@ export NVM_DIR="$HOME/dotfiles/.nvm" && (
 curl -L git.io/antigen > $HOME/dotfiles/antigen.zsh
 
 # Install GCP SDK
-curl "https://dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash" | bash -s -- --disable-prompts --install-dir="$HOME/dotfiles/google-cloud-sdk"
+curl "https://sdk.cloud.google.com" | bash -s -- --disable-prompts --install-dir="$HOME/dotfiles/google-cloud-sdk"
 
 exec -l $(which zsh)
