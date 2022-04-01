@@ -24,7 +24,7 @@ antigen bundle react-native
 
 # OS
 if  [[ "$OSTYPE" = darwin* ]]; then
-  antigen bundle osx
+  antigen bundle macos
 elif [[ "$OSTYPE" = linux* ]]; then
   antigen bundle ubuntu # If I'm using my dotfiles on a gnux distro, chances are it's ubuntu
 fi
