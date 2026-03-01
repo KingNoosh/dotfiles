@@ -1,2 +1,4 @@
 google-cloud-sdk
 .nvm
+.secrets
+antigen.zsh
